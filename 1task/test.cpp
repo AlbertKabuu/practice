@@ -11,7 +11,7 @@ Road::Road() {
 }
 int main() {
 	using namespace std;
-	cout << "Test v0.1:Ok.\n";
+	cout << "Test vB1-bA\n";
 	Road road;
 	cout << "Before access: \n";
 	cout << "Length: " << road.length << endl;
