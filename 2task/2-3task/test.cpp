@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 class Car {
@@ -34,9 +36,63 @@ class Car {
 		}
 };
 
+class Road {
+	private:
+		int length;
+		int width;
+		
+	public:
+		Road() {
+			length = 0;
+			width = 0;
+		}
+		Road(int newLength, int newWidth){
+			length = newLength;
+			width = newWidth;
+		}
+		void setLength(int newLength){
+			length = newLength;
+		}
+		void setWidth(int newWidth){
+			width = newWidth;
+		}
+		void setParameters(){
+			ifstream file;
+			
+			file.open("config.txt");
+			if (file.is_open()) {
+				string line;
+				
+				getline(file, line);
+				size_t slashPos = line.find("\\");
+				string firstNumber = line.substr(0, slashPos);
+				length = stoi(firstNumber);
+
+				getline(file, line);
+				string secondNumber = line.substr(0, slashPos);
+				width = stoi(secondNumber);
+
+				file.close();
+			}
+			else {
+				cout << "Unable to open file" << endl;
+			}
+		}
+		
+		int getLenght() const{
+			return length;
+		}
+		void showParameters() {
+			cout << "Length: " << length << endl;
+			cout << "Width: " << width << endl;
+		}
+		
+};
+
 int main() {
+	Road road(15, 1);
 	Car car(0,0);
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < road.getLenght(); i++) {
         car.moveX();
         cout << "X: " << car.getX() << endl;
     }
