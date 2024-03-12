@@ -1,13 +1,19 @@
 #include<iostream>
 using namespace std;
 class Pen {
-	public:
+	private:
 		string color;
+	public:
+		Pen(){
+			color = "#EEEEEE";
+		}
+		string getColor(){
+			return color;
+		}
 };
 
 int main() {
 	Pen pen;
-	pen.color = "#EEEEEE";
-	cout << "Color: " << pen.color << endl;
+	cout << "Color: " << pen.getColor() << endl;
 	return 0;
 }
