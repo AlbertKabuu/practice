@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 class Car {
@@ -89,14 +91,9 @@ class Road {
 int main() {
 	Car car(1, 11, 111);
 	car.showParameters();
-	car.setParameters(2, 22, 222);
-	car.showParameters();
 	
-	cout << "x: " << car.getX() << endl;
-	
-	
-	Car car1;
-	car1.showParameters();
+	Road road(150, 75);
+	road.showParameters();
 	
 	
 }
