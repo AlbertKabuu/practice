@@ -21,10 +21,17 @@ class Car {
 			cout << "P: " << p << endl;
 			cout << "V: " << v << endl;
 		}
+		void setParameters(int x, int p, int v) {
+			this->x = x;
+			this->p = p;
+			this->v = v;
+		}
 };
 
 int main() {
 	Car car(1, 11, 111);
+	car.showParameters();
+	car.setParameters(2, 22, 222);
 	car.showParameters();
 	
 	Car car1;
