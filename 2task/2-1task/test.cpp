@@ -26,6 +26,15 @@ class Car {
 			this->p = p;
 			this->v = v;
 		}
+		int getX() const {
+			return this->x;
+		}
+		int getP() const {
+			return this->p;
+		}
+		int getV() const {
+			return this->v;
+		}
 };
 
 int main() {
@@ -34,8 +43,13 @@ int main() {
 	car.setParameters(2, 22, 222);
 	car.showParameters();
 	
+	cout << "x: " << car.getX() << endl;
+	
+	
 	Car car1;
 	car1.showParameters();
+	
+	
 }
 
 
