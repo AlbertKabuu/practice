@@ -1,0 +1,4 @@
+function onClickStart()
+{
+	alert ("Кликнул");
+}
