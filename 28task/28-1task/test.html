@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Save Array Data to Text File</title> 
+	</head> 
+	<body> 
+		<h1>Save Array Data to Text File</h1> 
+		<button onclick="saveToFile()">Save</button> 
+		<script> 
+			const data = ['apple', 'banana', 'cherry', 'date']; 
+			function saveToFile() { 
+				const text = data.join('\n'); 
+				const blob = new Blob([text], { type: 'text/plain' }); 
+				const url = URL.createObjectURL(blob); 
+				const a = document.createElement('a'); 
+				a.href = url; a.download = 'data.txt'; 
+				document.body.appendChild(a); 
+				a.click(); 
+				document.body.removeChild(a); 
+			} 
+		</script> 
+	</body> 
+</html>
