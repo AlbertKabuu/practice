@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Save to Text File</title> 
+	</head> 
+	<body> 
+		<input type="text" id="inputData"> 
+		<button onclick="saveToFile()">Save</button> 
+		<script> function saveToFile() { 
+			let inputData = document.getElementById('inputData').value; 
+			let dataArray = inputData.split(':'); 
+			console.log(dataArray[0]);
+			let textToSave = "Ip:port :" + dataArray.join(':'); 
+			let blob = new Blob([textToSave], { type: 'text/plain' }); 
+			let link = document.createElement('a');
+			link.download = 'proxy.txt'; 
+			link.href = window.URL.createObjectURL(blob); 
+			link.click(); 
+		} 
+		</script> 
+	</body> 
+</html>
