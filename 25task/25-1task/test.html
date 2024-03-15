@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <div id="counter"></div>
+
+  <script>
+    let counterElement = document.getElementById('counter');
+
+    function updateCounter(count) {
+      counterElement.textContent = count;
+      if (count > 0) {
+        setTimeout(function() {
+          updateCounter(count - 1);
+        }, 1000);
+      }
+    }
+
+    updateCounter(10);
+  </script>
+</body>
+
+</html>
